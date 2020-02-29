@@ -1,0 +1,13 @@
+
+
+h3 {
+    margin-left: -150px;
+    animation: visible forwards;
+    
+}
+
+@keyframes visible {
+    100% {
+        transform: translate(170px, 0);
+    }
+}
