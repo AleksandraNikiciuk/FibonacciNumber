@@ -1,13 +1,222 @@
+/*/////////////////////////////////////////////////////////////////
+[ FONT ]*/
 
+@font-face {
+    font-family: Ubuntu-Light;
+    src: url('../fonts/ubuntu/Ubuntu-Light.ttf'); 
+}
 
-h3 {
-    margin-left: -150px;
-    animation: visible forwards;
-    
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+    box-sizing: border-box;
+    list-style: none;
+}
+
+input {
+	outline: none;
+	border: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input::-webkit-input-placeholder { color: #bdbdd3;}
+input:-moz-placeholder { color: #bdbdd3;}
+input::-moz-placeholder { color: #bdbdd3;}
+input:-ms-input-placeholder { color: #bdbdd3;}
+
+textarea::-webkit-input-placeholder { color: #bdbdd3;}
+textarea:-moz-placeholder { color: #bdbdd3;}
+textarea::-moz-placeholder { color: #bdbdd3;}
+textarea:-ms-input-placeholder { color: #bdbdd3;}
+
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+body, html {
+	height: 100%;
+	font-family: Ubuntu-Light, sans-serif;
+}
+
+/*---------------------------------------------*/
+
+.container {
+    width: 100%;  
+    min-height: 100vh;
+    position: relative;
+    padding: 15px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fibonacci {
+    width: 550px;
+    background: transparent;
+    padding: 50px 0px 160px 0px;
+    display: flex;
+    align-items: center;   
+    flex-direction: column;
+}
+
+.fibonacci__title {
+    display: block;
+    font-family: Ubuntu-Light;
+    font-size: 30px;
+    color: #403866;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 46px;
+}
+
+.fibonacci__label {
+    display: block;
+    font-family: Ubuntu-Light; 
+    font-size: 18px;
+    color: #403866;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.fibonacci__input {
+    background-color: #fff;
+    border-radius: 31px;
+    margin-bottom: 16px;
+    padding: 20px;
+    text-align: center;
+    font-family: Ubuntu-Bold;
+    font-size: 18px;
+    color: #8f8fa1;
+    line-height: 1.2;
+    width: 350px;
+    transition: all 0.6s;
+}
+
+.fibonacci__input:focus {
+    width: calc(80% + 10px);
+}
+
+.fibonacci__prompt {
+    display: block;
+    font-family: Ubuntu-Light; 
+    font-size: 18px;
+    color: #403866;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.alert {
+    color: red;
+}
+
+.fibonacci__list {
+    border-radius: 31px;
+    margin-bottom: 16px;
+    padding: 20px;   
+    font-family: Ubuntu-Bold;
+    font-size: 20px;
+    width: 350px;
+}
+
+.fibonacci__list li {
+    margin-left: -100vw;
+    animation: visible forwards;   
+    background-color: #fff;
+    border-radius: 31px;
+    margin-bottom: 16px;
+    width: 100%;
+    text-align: center;
 }
 
 @keyframes visible {
     100% {
-        transform: translate(170px, 0);
+        transform: translate(100vw, 0);
     }
+}
+
+.fibonacci__btn {
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #403866;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    font-family: Ubuntu-Light;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.fibonacci__btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.fibonacci__btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.fibonacci__btn:hover span {
+    padding-right: 25px;
+}
+  
+.fibonacci__btn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.fibonacci__btn:disabled {
+    background-color: grey;   
+    cursor: default;
+}
+
+.fibonacci__btn:disabled span:after {
+    content: '';    
+}
+
+.fibonacci__btn:disabled:hover span {
+    padding-right: 0px; 
+    cursor: default;
 }

@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Ciąg Fibonacciego</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ciąg Fibonacciego </title>
-
-    <link rel="stylesheet" href="css/style.css">
-   
+    <link rel="stylesheet" href="css/style.css">  
 </head>
-<body>
-    <button id="start"> Kliknij aby wygenerwać ciąg Fibonacciego</button>
-
-    <div class="fibonacci_List"> </div>
-
+<body> 
+    <div class="container">
+        <div class="fibonacci">  
+            <h1 class="fibonacci__title">Ciąg Fibonacciego</h1>       
+            <label class="fibonacci__label" for="fnumber">Podaj wyraz ciągu Fibonacciego który chcesz obliczyć</label>
+            <input class="fibonacci__input" type="text" id="fnumber" name="fnumber" placeholder="Podaj n-ty wyraz ciągu Fibonacciego">        
+            <p class="fibonacci__prompt" id="prompt"></p>
+            <div class="fibonacci_buttons"> 
+                <button class="fibonacci__btn" id="start"> <span> Start </span></button>
+                <button class="fibonacci__btn" id="reset">  <span> Reset </span> </button>
+            </div>
+            <ul class="fibonacci__list"></ul>
+        </div>
+    </div>  
+    
     <script src="js/app.js"></script>
 </body>
 </html>
