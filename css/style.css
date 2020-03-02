@@ -63,7 +63,7 @@ button:hover {
 
 body, html {
     height: 100%;
-    font-family: Ubuntu-Light, sans-serif;
+    font-family: Ubuntu, sans-serif;
 }
 
 /*---------------------------------------------*/
@@ -90,7 +90,7 @@ body, html {
 
 .fibonacci__title {
     display: block;
-    font-family: Ubuntu-Light;
+    font-family: Ubuntu, sans-serif;
     font-size: 30px;
     color: #403866;
     line-height: 1.2;
@@ -101,7 +101,8 @@ body, html {
 
 .fibonacci__label {
     display: block;
-    font-family: Ubuntu-Light; 
+    font-family: Ubuntu, sans-serif; 
+    font-weight: 300;
     font-size: 18px;
     color: #403866;
     line-height: 1.2;
@@ -115,7 +116,7 @@ body, html {
     margin-bottom: 16px;
     padding: 20px;
     text-align: center;
-    font-family: Ubuntu-Bold;
+    font-family: Ubuntu, sans-serif;
     font-size: 18px;
     color: #8f8fa1;
     line-height: 1.2;
@@ -129,12 +130,14 @@ body, html {
 
 .fibonacci__prompt {
     display: block;
-    font-family: Ubuntu-Light; 
+    font-family: Ubuntu, sans-serif;
+    font-weight: 300; 
     font-size: 18px;
     color: #403866;
     line-height: 1.2;
     text-align: center;
     padding-bottom: 30px;
+    height: 50px;
 }
 
 .alert {
@@ -145,17 +148,15 @@ body, html {
     border-radius: 31px;
     margin-bottom: 16px;
     padding: 20px;   
-    font-family: Ubuntu-Bold;
+    font-family: Ubuntu, sans-serif;
+    font-weight: 300;
     font-size: 20px;
     width: 350px;
 }
 
-.fibonacci__list li {
+.fibonacci__list_item{
     margin-left: -100vw;
     animation: visible forwards;   
-    background-color: #fff;
-    border-radius: 31px;
-    margin-bottom: 16px;
     width: 100%;
     text-align: center;
 }
@@ -166,15 +167,35 @@ body, html {
     }
 }
 
+.fibonacci__list_item span{
+    background-color: #fff;
+    width: 40%;
+    display: inline-block;
+    border-radius: 31px;
+    margin-bottom: 16px;
+}
+
+/* .fibonacci__label--fnish {
+    visibility: hidden;
+    animation: show forwards;   
+}
+
+@keyframes show {
+    100% {
+        visibility: visible;
+    }
+} */
+
 .fibonacci__btn {
     display: inline-block;
     border-radius: 15px;
-    background-color: #403866;
+    background-color:  #403866;
     border: none;
     color: #FFFFFF;
     text-align: center;
     font-size: 28px;
-    font-family: Ubuntu-Light;
+    font-family: Ubuntu, sans-serif;
+    font-weight: 300;
     padding: 20px;
     width: 200px;
     transition: all 0.5s;
@@ -197,9 +218,14 @@ body, html {
     right: -20px;
     transition: 0.5s;
 }
-  
+
+.fibonacci__btn:hover {
+    background-color:  #554b8a;
+}
+
 .fibonacci__btn:hover span {
     padding-right: 25px;
+    
 }
   
 .fibonacci__btn:hover span:after {

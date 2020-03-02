@@ -1,15 +1,15 @@
     const startButton = document.getElementById("start");
     const resetButton = document.getElementById("reset");
-    const fibonacciList = document.querySelector(".fibonacci__list");
+    const fibonacciList = document.getElementById("fibonacci__list");
     const userNumber = document.getElementById("fnumber");
     const prompt = document.getElementById("prompt");
+    const finishStatement = document.getElementById("finish");
 
-    
     //Creating array with Fibonacci sequence
     function createFibonacciNumbers(){
         let fibonacciLength = userNumber.value - 1;
         let fibonacciNumbers = [];
-        
+
         for (let i=0; i<=fibonacciLength; i++){
             if (i === 0) {fibonacciNumbers.push(0)};
             if (i === 1) {fibonacciNumbers.push(1)};
@@ -19,40 +19,37 @@
     }
 
     //Maping Fibonacci numbers into next HTML rows
-    function showFibonacciNumbers(numbers){
-        const fragment = document.createDocumentFragment();     
-
-        numbers.map(function(e,i){
-            let listItem = document.createElement("li");
-            listItem.innerText = e;
-  
-            listItem.style.animationDelay = i * 3 + "s"; // displaying next numbers evry 3s
-            fragment.appendChild(listItem)   
-        })   
-
-        fibonacciList.appendChild(fragment)          
+    function showFibonacciNumbers(numbers){       
+        const markup = `
+            ${numbers.map((e,i) => `
+                <li class="fibonacci__list_item" style="animation-delay:${i*3}s">
+                    <span>n${i+1} = ${e}</span>
+                </li>
+            `).join('')}
+        `;
+        fibonacciList.innerHTML = markup;
     }
 
     //Input validating function
     function validateForm(){
         let number = parseFloat(userNumber.value, 10);
-
         if ( number<=0 || Number.isInteger(number) === false){
-            prompt.innerHTML = "Podano niewłaściwą wartość. Podana wartość powinna być dodatnią liczbą całkowitą";        
+            prompt.innerText = "Podano niewłaściwą wartość. Podana wartość powinna być dodatnią liczbą całkowitą";        
             prompt.classList.add("alert");
             return false;
         } else {
-            prompt.innerHTML = `Liczę ${number} wyraz ciągu Fibonacciego`;
+            prompt.innerText = `Liczę ${number} wyraz ciągu Fibonacciego`;
             startButton.disabled="disabled";
             prompt.classList.remove("alert");
             return true;
         }
     }
 
+    //Reset last Fibonacci numbers
     function resetFibonacciNumbers(){
         startButton.disabled=false;
         fibonacciList.querySelectorAll("li") ?  fibonacciList.textContent = '' : fibonacciList;
-        prompt.innerHTML = "";
+        prompt.innerText = "";
         userNumber.value = "";
     }
 
